@@ -1,4 +1,4 @@
-# NNNOW Product Scraper
+# Shopping Website Product Scraper
 
 A Selenium-based web scraper to extract product details from [NNNOW](https://www.nnnow.com/) website.  
 This project was developed iteratively, gradually adding features for more detailed product scraping.
