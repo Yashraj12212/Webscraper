@@ -211,3 +211,17 @@ driver.quit()
     Weight, age_group, and some fields may be missing in HTML and can be inferred.
     Incrementally added features: URLs → Product Page Details → Material → Description → Images → Sizes → Category → CSV.
 
+## Known Issues / Possible Errors During Scraping
+
+    Missing Data Fields: Some products may lack descriptions, weight, or material fields, resulting in empty strings.
+    Out-of-Stock Sizes: Sizes marked disabled in HTML are considered out-of-stock and won’t be counted as available.
+    Dynamic Content Loading: Some images or elements might load slowly; adding time.sleep() or WebDriverWait is recommended.
+    Duplicate URLs: Already handled by seen_urls set, but dynamic page updates may occasionally add duplicates.
+    Network Issues: Temporary connection issues or slow responses may break the scraper.
+    Website Structure Changes: If NNNOW updates their HTML/CSS, selectors in the scraper may fail, causing exceptions.
+
+## Error Handling Recommendations
+    Use try-except blocks for each element extraction to continue scraping even if some fields fail.
+    Wrap network-dependent operations with retries and timeouts to handle intermittent connection issues.
+    Log errors with the product URL to revisit failed items later.
+    Periodically update CSS selectors to match website changes.
